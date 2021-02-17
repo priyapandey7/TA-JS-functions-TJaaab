@@ -221,14 +221,21 @@ let oddOrEven = function (number) {
 };
 // - Write an named Function Expression
 let oddOrEven = function oddOrEven(number) {
-  return number % 2 === 0 ? `Number is odd` : `Number is even`;
+  if (number % 2 === 0) {
+    return `numberis Even`;
+  } else {
+    return `number is odd`;
+  }
 };
 // - Write an Arrow Function without curly brackets (hint: use ternary operator)
-let oddOrEven = (number) =>
-  number % 2 === 0 ? `Number is odd` : `Number is even`;
+
 // - Write an Arrow Function with curly brackets
 let oddOrEven = (number) => {
-  return number % 2 === 0 ? `Number is odd` : `Number is even`;
+  if (number % 2 === 0) {
+    return `numberis Even`;
+  } else {
+    return `number is odd`;
+  }
 };
 // - Execute the function
 oddOrEven(12);
