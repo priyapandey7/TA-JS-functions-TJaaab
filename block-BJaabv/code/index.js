@@ -68,11 +68,23 @@ pow(-31, 2); // "The number below 1 is not allowed"
 6. 🎖Write a program that accepts two parameter a number n and a string with possible values of `sum` or `product`
 and return sum or product of 1,…,n. If user enters any other value than `sum` or `product` alert `Not a valid Input`.
 */
-
-function sumOrProductOfN() {
-  // Your code goes here
+function sumOrProductOfN(n, opretion) {
+  if (opretion === "sum") {
+    let sum = 0;
+    for (let i = n; i >= 1; i--) {
+      sum += i;
+    }
+    return sum;
+  } else if (opretion === "product") {
+    let product = 1;
+    for (let i = n; i >= 1; i--) {
+      product *= i;
+    }
+    return product;
+  } else {
+    return alert(`Not a valid Input`);
+  }
 }
-
 sumOrProductOfN(4, "sum"); // 10
 sumOrProductOfN(4, "product"); // 24
 sumOrProductOfN(4, "hello"); // alert "Not a valid Input"
