@@ -11,8 +11,8 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
-  // Your code
+function minToSec(minutes) {
+  return (minutes = 60);
 }
 // - Execute the function with required parameter
 
@@ -26,8 +26,8 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
-  // Your code
+function isInRange(lower, upper, number) {
+  return num > lower && num < upper;
 }
 // - Execute the function with required parameter
 
@@ -49,14 +49,25 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
-  // Your code
+function calculateBMI(weight, height) {
+  let bmi = weight / (height * height);
+  switch (true) {
+    case bmi < 18.5:
+      return "Underweight";
+    case bmi > 18.5 && bmi < 24.9:
+      return "normal";
+    case bmi > 25 && bmi < 29:
+      return "Overweight";
+    case bmi > 30:
+      return "Obese";
+    default:
+      alert("Enter Valid input");
+  }
 }
 
 /* 3. appropiateDrinks
 
 Create a function that take the age are return the appropiate drink based on these conditions:
-
 - Under 14 years old — return "drink fruit juice"
 - Under 18 years old — return "drink soda"
 - Under 21 — return "drink fruit-flavored beer"
@@ -64,8 +75,20 @@ Create a function that take the age are return the appropiate drink based on the
 
 */
 
-function appropiateDrinks() {
-  // Your code
+function appropiateDrinks(age) {
+  switch (true) {
+    case age < 14:
+      return "drink fruit juice";
+    case age < 18:
+      return "drink soda";
+    case age < 21:
+      return "drink fruit-flavored beer";
+    case age > 21:
+      return "drink throat-piercing vodka";
+
+    default:
+      alert("Enter Valid input");
+  }
 }
 
 /* 4. Add two numers or string
@@ -79,13 +102,20 @@ Twist is when user passes anything other than number, or string value you should
 
 */
 
-function sum() {
-  // Your code
+function sum(a, b) {
+  if (typeof a == "number" && typeof b == "number") {
+    return a + b;
+  }
+  if (typeof a == "string" && typeof b == "number") {
+    return "a" + " " + "b";
+  } else {
+    alert("Enter valid values");
+  }
 }
 
 // Function Test
 sum(2, 4); // 4
-sum('Arya', 'Stark'); // "Arya Stark"
-sum('Arya', 2); // Enter valid Values
+sum("Arya", "Stark"); // "Arya Stark"
+sum("Arya", 2); // Enter valid Values
 sum(null, 2); // Enter valid Values
 sum(undefined, 2); // Enter valid Values
